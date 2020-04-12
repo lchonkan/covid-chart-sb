@@ -1,6 +1,7 @@
 body {
     padding: 25px 25px 25px 25px;
     font-family: 'Montserrat', sans-serif;
+    max-width: 800px;
     text-align: center;
     background-color:hsla(34, 5%, 15%, 1);
 
