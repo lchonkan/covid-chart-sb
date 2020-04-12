@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.8.7/polyfill.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script type="text/babel">
+
+        // Using asynchronous functions and FETCH together
+        // First we create an async function that takes a loingName as an Argument
+        const githubRequest = async (loginName) => {
+            try {
+                var response = await fetch(`https://api.github.com/users/${loginName}/followers`);
+                var json = await response.json();
+                var followerList = json.map(user => user.login);
+                console.log(followerList);
+
+            } catch (e) {
+                console.log("Data didnt load", e);
+
+            }
+        };
+
+        githubRequest('lchonkan');
+
+    </script>
+
+
+
+
+    <title>Asynchronous features</title>
+</head>
+
+<body>
+    <header>
+
+        <h1>Async and Fetch</h1>
+    </header>
+
+    <main>
+
+
+    </main>
+</body>
+
+</html>

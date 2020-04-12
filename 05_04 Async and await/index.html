@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.8.7/polyfill.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script type="text/babel">
+
+        const delay = seconds => {
+            return new Promise(
+                resolve => setTimeout(resolve, seconds * 1000)
+            )
+        };
+
+        console.info('Async demonstration');
+        const countToFive = async () => {            //asynchronous function
+            console.log('zero seconds');
+            await delay(1);
+            console.log('one second');
+            await delay(1);
+            console.log('two seconds');
+            await delay(1);
+            console.log('three seconds');
+            await delay(1);
+            console.log('four seconds');
+            await delay(1);
+            console.log('five seconds');
+        }
+
+        countToFive();
+
+
+
+    </script>
+
+
+    <title>Asynchronous features</title>
+</head>
+
+<body>
+    <header>
+
+        <h1>Async and await</h1>
+    </header>
+
+    <main>
+
+
+    </main>
+</body>
+
+</html>

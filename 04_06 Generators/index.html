@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.8.7/polyfill.js"></script>
+
+
+
+
+    <title>Generators</title>
+
+</head>
+
+<body>
+    <header>
+        <h1>Generators</h1>
+        <p>
+            Generators are a new type of function that allow us to pause <br /><br />
+            functions in the middle of execution, to be resumed later. <br /><br />
+
+            We use an asterix before the function keyword. *** <br />
+
+            Se puede ver como una funcion con diferentes estados.
+        </p>
+    </header>
+
+    <section class="example">
+
+        <h2>Simple Example</h2>
+        <p>This is an example of a function of a simple generator</p>
+        <pre type="text/babel">
+
+    function* director() {
+        yield "three";
+        yield "two";
+        yield "one";
+        yield "action";
+    }
+
+    var action = director();
+    console.log(action.next().value);
+    console.log(action.next().value);
+    console.log(action.next().value);
+    console.log(action.next().value);
+    console.log(action.next().value);
+
+        </pre>
+
+
+        <script type="text/babel">
+            function* director() {
+                yield "three";
+                yield "two";
+                yield "one";
+                yield "action";
+            }
+
+            var action = director();
+            console.log(action.next().value);
+            console.log(action.next().value);
+            console.log(action.next().value);
+            console.log(action.next().value);
+            console.log(action.next().value);
+        </script>
+
+    </section>
+
+
+
+
+    <section class="example">
+
+        <h2>Timer Example</h2>
+        <p>In this example we use a function <code>eachItem</code> that takes arguments</p>
+        <p>We use a for loop that yields the value in the array</p>
+        <p>This is the generator.
+             It will generate a letter each time it is called.
+             </p>
+        <pre >
+
+            
+    function* eachItem(arr) {
+        for (var i = 0; i < arr.length; i++) {
+            yield arr[i];
+        }
+    }
+
+    var letters = eachItem(["a", "b", "c", "d", "e", "f", "g"]);
+
+    //Set interval takes in an function and wants to know what our interval is
+    var abcs = setInterval(() => {
+        var letter = letters.next();
+        if (letter.done) {
+            console.log('Now I know my ABCs')
+        } else {
+            console.log(letter.value);
+        }
+    }, 500);
+
+        </pre>
+
+        <script type="text/babel">
+            
+
+            function* eachItem(arr) {
+                for (var i = 0; i < arr.length; i++) {
+                    yield arr[i];
+                }
+            }
+
+            var letters = eachItem(["a", "b", "c", "d", "e", "f", "g"]);
+
+            //Set interval takes in an function and wants to know what our interval is
+            var abcs = setInterval(() => {
+                //this is the content of the function that is executed at intervals
+                var letter = letters.next();
+                if (letter.done) {
+                    console.log('Now I know my ABCs');
+                    clearInterval(abcs);
+                    console.info("Done!");
+                } else {
+                    console.log(letter.value);
+                }
+
+            }, 500); // this is the inverval at which the function is to be exeucted
+
+            
+
+        </script>
+
+    </section>
+
+
+</body>
+
+</html>

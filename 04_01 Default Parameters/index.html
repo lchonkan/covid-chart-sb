@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+
+    <!-- Function with default values as numbers -->
+    <script type="text/babel">
+        function add(x = 5, y = 7) {
+            console.log(x + y);
+        }
+        add();
+    </script>
+
+    <!--  Function with default values as strings -->
+    <script type="text/babel">
+        function haveFun(activityName="nuts", time=3) {
+            console.log(`Today I will go ${activityName} for ${time} hours`);
+        }
+        haveFun("biking",5);
+    </script>
+
+    <title>Default Function Parameters</title>
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

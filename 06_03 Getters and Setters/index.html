@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+
+
+    <script type="text/babel">
+
+        var attendance = {
+            _list: [],
+            set addName(name){
+                this._list.push(name);
+
+            },
+            get list() {
+                return this._list.join(', ');
+            }
+
+        }
+
+        attendance.addName = 'Leo';
+        console.log("List Getter:" + attendance.list);
+        console.log("Underscore List (prop):" + attendance._list);
+
+        attendance.addName = 'Carlos';
+        console.log("List Getter:" + attendance.list);
+
+        console.log("====================Classes==================================");
+
+        class Hike {
+            constructor(distance,pace){
+                this.distance = distance;
+                this.pace = pace;
+            }
+            get lengthInHours(){
+                return `${this.calcLength()} hours`;
+            }
+            calcLength(){
+                return this.distance / this.pace;
+            }
+
+        }
+
+        const mtTallac = new Hike(10,2);
+
+        console.log(mtTallac.lengthInHours)
+
+    </script>
+
+
+    <title>ES6 Classes</title>
+</head>
+
+<body>
+    <header>
+
+        <h1>Getters and Setters</h1>
+    </header>
+
+    <main>
+
+
+
+    </main>
+</body>
+
+</html>
