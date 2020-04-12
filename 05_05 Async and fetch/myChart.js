@@ -1,4 +1,11 @@
 
+
+
+
+var chartDates;
+var activeCases;
+
+
 // Render the Chart
 function renderChart(data, dates) {
     var ctx = document.getElementById("myChart").getContext('2d');
@@ -8,7 +15,7 @@ function renderChart(data, dates) {
             labels: dates,
             datasets: [
                 {
-                    label: 'Casos Activos',
+                    label: 'Costa Rica',
                     data: data,
                     borderColor: '#ffba49',
                     backgroundColor: '#040403',
@@ -50,12 +57,10 @@ var requestOptions = {
         //Get the data
         var response = await fetch(`https://api.covid19api.com/total/dayone/country/${country}/status/confirmed`, requestOptions)
         var json = await response.json();
-        var data = json.map(logRecord => [logRecord.Date,logRecord.Cases]);
-        var dates = json.map(logRecord => logRecord.Date);
-        var cases = json.map(logRecord => logRecord.Cases);
+        var data = json.map(logRecord => [logRecord.Date, logRecord.Cases]);
+        chartDates = json.map(logRecord => logRecord.Date);
+        activeCases = json.map(logRecord => logRecord.Cases);
         console.log(data);
-        //Launch the Chart
-        renderChart(cases, dates);
 
     } catch (e) {
         console.log('error', e);
@@ -65,3 +70,8 @@ var requestOptions = {
 
 
 
+
+function showData(){
+//Launch the Chart
+renderChart(activeCases, chartDates);
+}
