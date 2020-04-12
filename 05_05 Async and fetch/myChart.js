@@ -10,8 +10,8 @@ function renderChart(data, dates) {
                 {
                     label: 'Casos Activos',
                     data: data,
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: '#ffba49',
+                    backgroundColor: '#040403',
                 },
             ]
         },

@@ -1,9 +1,8 @@
 body {
     padding: 25px 25px 25px 25px;
     font-family: 'Montserrat', sans-serif;
-    max-width: 800px;
     text-align: center;
-    background-color:hsla(34, 5%, 15%, 1);
+    background-color:#040403;
 
 }
 
@@ -24,7 +23,7 @@ h1,h2,h4 {
 }
 
 h1{
-    font-size: 30px;
+    font-size: 25px;
     text-shadow: darkgray;
     margin: 0;
     padding-bottom: 40px;
@@ -37,7 +36,7 @@ h2 {
 }
 
 h4{
-    color: red;
+    color:#d63230;
 }
 
 p {
