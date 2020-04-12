@@ -48,7 +48,7 @@ var requestOptions = {
     try {
 
         //Get the data
-        var response = await fetch(`https://api.covid19api.com/total/dayone/country/costa-rica/status/confirmed`, requestOptions)
+        var response = await fetch(`https://api.covid19api.com/total/dayone/country/${country}/status/confirmed`, requestOptions)
         var json = await response.json();
         var data = json.map(logRecord => [logRecord.Date,logRecord.Cases]);
         var dates = json.map(logRecord => logRecord.Date);
@@ -60,7 +60,7 @@ var requestOptions = {
     } catch (e) {
         console.log('error', e);
     }
-})('costa-rica');
+})('costa-rica'); // Anonymous function call 
 
 
 
